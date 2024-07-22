@@ -14,10 +14,10 @@
 
 - 回歸模型演算法介紹
   - [線性回歸(Linear Regression)](#線性回歸)
-  - 多項式回歸(Polynomail Regression)
-  - 決策樹回歸(DecisionTree Regressor)
-  - 隨機森林回歸(Random Forest Regressor)
-  - 支持項量回歸(Support Vectir Regression)
+  - [多項式回歸(Polynomail Regression)](#多項式回歸)
+  - [決策樹回歸(DecisionTree Regressor)](#決策樹回歸)
+  - [隨機森林回歸(Random Forest Regressor)](#隨機森林回歸)
+  - [支持項量回歸(Support Vectir Regression)](#支持向量回歸)
 
 ## 線性回歸
 
@@ -34,7 +34,7 @@
 
 ![image](https://github.com/kaiser7410/ML-DL/blob/main/img/%E7%B7%9A%E6%80%A7.png)
 
-## 多項式回歸(Polynomial Regression)
+## 多項式回歸
 
 多項式回歸是一種在回歸分析中使用的線性回歸模型，其中自變數的冪被用作回歸線的項。<br>
 他可以用於擬合非線性數據，通常用於預測數值型變量，例如房價、股票價格等等。
@@ -49,7 +49,7 @@
 
 ![image](https://github.com/kaiser7410/ML-DL/blob/main/img/%E5%A4%9A%E9%A0%85%E5%BC%8F.png)
 
-## 決策樹回歸(Decision Tree Regressor)
+## 決策樹回歸
 
 決策樹回歸中，每一個內部節點都代表一個特徵，每一個葉節點都代表一個預測值。<br>
 建立決策樹時，分裂節點時的目標是最小化平方誤差，即實際值和預測值之間的差異平方和。<br>
@@ -61,7 +61,7 @@
 
 ![image](https://github.com/kaiser7410/ML-DL/blob/main/img/%E6%B1%BA%E7%AD%96%E6%A8%B9.png)
 
-## 隨機森林回歸(Random Forest Regressor)
+## 隨機森林回歸
 
 隨機森林回歸是一種集成式學習算法，結合了多個決策樹回歸模型，通過投票方式進行預測。<br>
 與單獨的決策樹回歸模型相比，隨機森林回歸模型可以更好的避免過擬合的問題，提高模型泛化能力。
@@ -73,7 +73,7 @@
 
 ![image](https://github.com/kaiser7410/ML-DL/blob/main/img/%E9%9A%A8%E6%A9%9F%E6%A3%AE%E6%9E%97.png)
 
-## 支持向量回歸(Support Vector Regression)
+## 支持向量回歸
 
 支持向量是一種回歸分析法，使用支持向量機(Support Vector Machine)進行建模。<br>
 在支持向量回歸模型中，模型的目標是找到一個最佳的超平面，使得這個超平面最大化在所有訓練樣本上的變季(margin)。<br>
