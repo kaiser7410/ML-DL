@@ -13,13 +13,13 @@
   - 非線性回歸問題
 
 - 回歸模型演算法介紹
-  - 線性回歸(Linear Regression)
+  - [線性回歸(Linear Regression)](#線性回歸)
   - 多項式回歸(Polynomail Regression)
   - 決策樹回歸(DecisionTree Regressor)
   - 隨機森林回歸(Random Forest Regressor)
   - 支持項量回歸(Support Vectir Regression)
 
-## 線性回歸(Linear Regression)
+## 線性回歸
 
 - 線性回歸是一種用於建立和分析數據之間關係的統計方法。
 - 通常用於建立一個自變數(x)和一個因變數(y)之間的線性關係。
