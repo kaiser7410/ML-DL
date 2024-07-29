@@ -1,10 +1,79 @@
-# 多分類模型練習
+# 多分類模型筆記
+
+## 介紹
+
+在機器學習中，多分類問題是指需要將資料劃分到三個或更多的類別當中。<br>
+
+相比二分類問題，多分費問題更具挑戰性，因為需要對各個類別進行更複雜的分類判斷。
+
+- 常見的多分類演算法:
+  - [One-vs-One(OvO)](#one-vs-one)
+  - [One-vs-Rest(OvR)](#one-vs-rest)
+  - [Error Correcting Output Codes(ECOC)](#error-correcting-output-codes)
+
+每種演算法都有其優點和缺點，可以根據問題的特性和資料的特點選擇適合的演算法。<br>
+
+## One-vs-One
+
+此法每次只考慮兩個類別，將其餘的類別忽略掉，並使用二元分類器來判斷這兩個類別。<br>
+
+由於每次只考慮兩個類別，因此需要執行 K(K-1)/2 次分類，其中 K 是類別的數量。<br>
+
+例如:<br>
+
+如果我們有 4 個類別 A,B,C 和 D，我們將訓練 6 個二元分類器: A vs B, A vs C, A vs D, B vs C, B vs D 和 C vs D。為了預測新實力的類別，我們將每一個二元分類器應用於該實例，並查看他更可屬於哪個類別。然後我們計算每一個類別的票數，並將票數最多的類別作為預測類別。
+
+## One-vs-Rest
+
+此法中，將每一個類別和其他所有類別分為兩個部分，將問題轉化為多個⼆元分類問題。<br>
+
+對於每一個類別，都訓練⼀個⼆元分類器，這個分類器將該類別標記為正樣本，其他所有類別標記為負樣本。當新實例到來時，將它傳遞給每個⼆元分類器，並查看它屬於哪個類別。<br>
+
+然後，根據每個⼆元分類器的預測，計算每個類別的得分，並將得分最⾼的類別作為預測類別。<br>
+
+例如:<br>
+
+如果我們有 4 個類別 A、B、C 和 D，我們將訓練 4 個⼆元分類器：A vs ⾮ A、B vs ⾮ B、C vs ⾮ C 和 D vs
+⾮ D。對於新的實例，我們會將其傳遞給這 4 個分類器，並收集每個分類器的預測。然後，對於每個類別，根
+據所有分類器的預測計算得分，並將得分最⾼的類別作為預測類別。
+
+## Error Correcting Output Codes
+
+ECOC 法是多分類問題中的一種方法，與 OvO 和 OvR 不同。<br>
+
+此法每一個類別都可以與其他類別進行匹配，因此需要訓練多個二元分類器。<br>
+
+對於每一個類別，都訓練一個二元分類器，以區分兩個類別是否屬於此類別隊，然後將所有二元分類器的預測結果進行投票以決定分類結果。<br>
+
+多對多法的優點是可以處理多個類別之間的互相影響，並且可以更好地應對類別不平衡的情況。
+
+例如: <br>
+
+假設我們有 4 個類別 A,B,C 和 D，我們想要使用 ECOC 方法來進行多元分類，首先需要設計一個二進制編碼表，將每一個類別映射到一個二進制編碼 A:00 B:01 C:10, D:11，根據編碼錶，我們需要訓練多個二元分類器。對於每一個二元分類器，我們將選擇兩個類別進行訓練，並將它們是為負例。<br>
+
+例子中，我們將訓練 6 個二元分類器:
+
+| 分類器 1: A vs B | 分類器 2: A vs C | 分類器 3: A vs D |
+| :--------------: | :--------------: | :--------------: |
+| 分類器 4: B vs C | 分類器 5: B vs D | 分類器 6: C vs D |
+
+在預測過重結束後，我們將計算每一個類別的票數。對每一個類別，我們統計在所有分類器中該類別被預測為正例的次數。最終我們將票數最多的類別作為最終遇刺類別。<br>
+
+票數統己中可以看出，C 和 D 的票數都是 2。根據 ECOC 方法，我們可以選擇以下策略來解決票數相同的情況:
+
+1. 隨機選擇: 如果多個類別票數相同，可以隨機從這些類別中選擇一個作為最終的預測類別。
+2. 優先順序: 如果優先順序或者順序先後的要求，可以根據這些要求從票數相同的類別中選擇一個作為最終的預測類別。
+3. 平局處理: 如果希望在票數相同的情況下保持平局，則可以將多個類別都是為最終的預測類別。
+
+## 多分類模型練習
+
 題目:<br>
-+ Iris Dataset<br>
-https://www.kaggle.com/datasets/vikrishnan/iris-dataset
 
-+ Wine_data<br>
-https://www.kaggle.com/datasets/akhil0007/wine-data
+- Iris Dataset<br>
+  https://www.kaggle.com/datasets/vikrishnan/iris-dataset
 
-+ Cirrhosis Prediction Dataset<br>
-https://www.kaggle.com/datasets/fedesoriano/cirrhosis-prediction-dataset
+- Wine_data<br>
+  https://www.kaggle.com/datasets/akhil0007/wine-data
+
+- Cirrhosis Prediction Dataset<br>
+  https://www.kaggle.com/datasets/fedesoriano/cirrhosis-prediction-dataset
