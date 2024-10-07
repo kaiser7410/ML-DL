@@ -24,3 +24,38 @@
   | 用途 | 預測、分類、識別等 | 發現樹劇中的模式和特徵、數據壓縮、分群等 |
   | 優點 | 可以精確地預測和分類、需要較少的訓練數據 | 可以處理大量未標記的數據、可以用於發現樹劇中的影藏特徵和模式|
   | 缺點 | 需要標記數據、對躁聲和異常值敏感 | 無法精確預測和分類、可能會受到躁聲和異常值的干擾 |
+
+## 常見的非監督式學習算法
+
+- 分群
+  - K-means
+  - 層次聚類
+  - DBSCAN
+- 降維
+  - 主成分分析(PCA)
+  - 獨立成分分析(ICA)
+  - t-SNE
+- 關聯規則
+  - Apriori
+  - FP-growth
+
+## 分群
+
+### 定義和特點
+
+分群是指將數據集中的一個個相似的數據點分為不同的組別。
+
+### 計算方式
+
+計算距離的方式包含歐幾里得距離、曼哈頓距離、Jaccard 係數、Cosine 相似度等。
+
+### 常見的分權算法
+
+- K-means
+- EM (Expectation-Maximization Algorithm)
+- GMM (Gaussian Mixture Model)
+- Bayesian-GMM (Bayesian Gaussain Mixtrue Model)
+
+### 評估分群指標
+
+內部指標和外部指標，如 Silhouette Coefficient、Calinski-Harabasz index、Davies-Bouldin index 等。
